@@ -200,6 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379646881428212858}
+  - component: {fileID: -4150714022749845106}
   - component: {fileID: -6053676106504452569}
   m_Layer: 0
   m_Name: Farmer
@@ -224,6 +225,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &-4150714022749845106
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673849232550832429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &-6053676106504452569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,4 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dc108a653ba9e43b2ebf80b7e66245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
