@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 362462812}
   - component: {fileID: 362462811}
   - component: {fileID: 362462810}
+  - component: {fileID: 362462814}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -318,6 +319,20 @@ Transform:
   m_Father: {fileID: 1396400859}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362462814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362462809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3ebb0e1d4b7494caea1fcbf1a15fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotObject: {fileID: 1396400859}
+  speed: 0.5
 --- !u!1001 &445717902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -938,6 +953,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmer: {fileID: 3673849232550832429, guid: f4ccc8a800bf6154698f24f474402c4f, type: 3}
   thief: {fileID: 2875698946435644915, guid: 70cec00fd4cd7eb42a759b5ae3c5c3da, type: 3}
+  spawnDelay: 1
+  spawnTimer: 1
 --- !u!1001 &1364719161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1027,14 +1044,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396400858}
-  m_LocalRotation: {x: -0.7749593, y: -0, z: -0, w: 0.6320112}
+  m_LocalRotation: {x: -0.77162457, y: 0, z: 0, w: 0.63607824}
   m_LocalPosition: {x: 0.07, y: 1.26, z: 9.8}
   m_LocalScale: {x: 0.98749, y: 1, z: 1}
   m_Children:
   - {fileID: 362462813}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -101.603, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -101, y: 0, z: 0}
 --- !u!1001 &1626057751
 PrefabInstance:
   m_ObjectHideFlags: 0

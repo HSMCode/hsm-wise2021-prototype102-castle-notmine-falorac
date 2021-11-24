@@ -10,11 +10,12 @@ public class spawnPeople : MonoBehaviour
     private Vector3 position;
     private float randomZPosition;
     public float spawnDelay = 1.0f;
-    public float spawnTimer = 1.5f;
+    public float spawnTimer = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        // repeat spawning of people after seconds (spawnDelay) at interval (spawnTimer)
         position = transform.position;
         InvokeRepeating("Spawning", spawnDelay, spawnTimer);
     }
@@ -25,9 +26,18 @@ public class spawnPeople : MonoBehaviour
     }
 
     private void Spawning() {
-        // Spawn person at gameObject location (random x position)
-        randomZPosition = Random.Range(transform.position.z - 3f, transform.position.z + 2.5f);
+        // Choose type of spawning person randomly (farmers more likely)
+        float choosePerson = Random.Range(0.0f, 1.0f);
+        GameObject chosenPerson;
+        if (choosePerson < 0.8f) {
+            chosenPerson = farmer;
+        } else {
+            chosenPerson = thief;
+        }
+
+        // Spawn person at gameObject location with random z position on path
+        randomZPosition = Random.Range(transform.position.z - 2.8f, transform.position.z + 2.5f);
         position.z = randomZPosition;
-        GameObject instanciatedPerson = Instantiate(farmer, position, Quaternion.identity, this.gameObject.transform);
+        GameObject instanciatedPerson = Instantiate(chosenPerson, position, Quaternion.identity, this.gameObject.transform);
     } 
 }
