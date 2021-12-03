@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class spawnPeople : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class spawnPeople : MonoBehaviour
     private Vector3 position;
     private float randomZPosition;
     public float spawnDelay = 1.0f;
-    public float spawnTimer = 1.0f;
+    public float spawnTimer = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,25 +19,27 @@ public class spawnPeople : MonoBehaviour
         // repeat spawning of people after seconds (spawnDelay) at interval (spawnTimer)
         position = transform.position;
         InvokeRepeating("Spawning", spawnDelay, spawnTimer);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
     }
 
     private void Spawning() {
         // Choose type of spawning person randomly (farmers more likely)
         float choosePerson = Random.Range(0.0f, 1.0f);
         GameObject chosenPerson;
-        if (choosePerson < 0.8f) {
+        if (choosePerson < 0.5f) {
             chosenPerson = farmer;
         } else {
             chosenPerson = thief;
         }
 
         // Spawn person at gameObject location with random z position on path
-        randomZPosition = Random.Range(transform.position.z - 2.8f, transform.position.z + 2.5f);
+        randomZPosition = Random.Range(transform.position.z - .5f , transform.position.z + 2.5f);
         position.z = randomZPosition;
         GameObject instanciatedPerson = Instantiate(chosenPerson, position, Quaternion.identity, this.gameObject.transform);
     } 
