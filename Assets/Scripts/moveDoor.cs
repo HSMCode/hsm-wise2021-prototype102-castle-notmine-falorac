@@ -82,6 +82,7 @@ public class moveDoor : MonoBehaviour
         
         if (other.CompareTag("Farmer"))
         {
+            //Timer needs to go up by more than 1 second
             Timer ++;
             points++;
             //Debug.Log("FARMER!");
