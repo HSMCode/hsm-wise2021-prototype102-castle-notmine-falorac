@@ -18,20 +18,32 @@ public class moveDoor : MonoBehaviour
     public TextMeshProUGUI damageText;
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI pointsMadeText;
+    public TextMeshProUGUI pointsMadeText2;
     public GameObject gameOverPanel;
+    public GameObject gameWonPanel;
     public GameObject spawner;
     
+
+    private AudioSource doorAudioSource;        //create audiosource-variable
    
+    public Animator doorAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         isDoorDown = true;
+        doorAnimator.SetBool("IsOpen", true);
         Timer = 30f;
         damage = 5;
         points = 0;
         gameOverPanel.SetActive(false);
+        gameWonPanel.SetActive(false);
+
+        doorAudioSource = GetComponent<AudioSource>();    //assign audio-source of this object to the variable, the clip in the source (atmo) is set to play on awake and loop  
+
+       // doorAnimator = GetComponent<Animator>();
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -46,13 +58,18 @@ public class moveDoor : MonoBehaviour
         {
             if (isDoorDown) 
             {
-                transform.RotateAround(pivotObject.position, Vector3.right * speed * Time.deltaTime, doorRotation);
+                //transform.RotateAround(pivotObject.position, Vector3.right * speed * Time.deltaTime, doorRotation);
+                doorAnimator.SetTrigger("move");
                 isDoorDown = false;
+                doorAnimator.SetBool("IsOpen", false);
+                
             } 
             else 
             {
-                transform.RotateAround(pivotObject.position, Vector3.left * speed * Time.deltaTime, doorRotation);
+                doorAnimator.SetTrigger("move");
+               // transform.RotateAround(pivotObject.position, Vector3.left * speed * Time.deltaTime, doorRotation);
                 isDoorDown = true;
+                doorAnimator.SetBool("IsOpen", true);
             }
         }
     }
@@ -67,7 +84,7 @@ public class moveDoor : MonoBehaviour
 
         if (Timer <= 0)
         {
-            GameOver();
+            GameWon();
         }
     }
 
@@ -94,7 +111,10 @@ public class moveDoor : MonoBehaviour
         damageText.text = "Damage: " + damage;
 
         if (damage <= 0)
+        {
             GameOver();
+        }
+            
     }
 
     private void GameOver()
@@ -102,6 +122,23 @@ public class moveDoor : MonoBehaviour
         gameOverPanel.SetActive(true); // GameOver Message
         pointsMadeText.text = "You saved " + points + " farmers"; // show points on GameOver Panel
         Destroy(spawner); // stop spwaning people
+        StopAtmo();
 
+    }
+
+    private void GameWon()
+    {
+        gameWonPanel.SetActive(true); // GameOver Message
+        pointsMadeText2.text = "You saved " + points + " farmers"; // show points on GameOver Panel
+        Destroy(spawner); // stop spwaning people
+        StopAtmo();
+    }
+
+    private void StopAtmo()
+    {
+        if (doorAudioSource.isPlaying)
+        {
+            doorAudioSource.Stop();     //if game ends, stop playing atmo, the game-ending sounds are attached to the canvasses and set to play on awake
+        }
     }
 }
