@@ -3,11 +3,14 @@
 Stop thieves from sneaking into the castle! 
 
 ## Summary
-
+  - [Code Structure](#code-structure)
   - [Getting Started](#getting-started)
   - [Authors](#authors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
+
+## Code Structure
+
 
 ## Getting Started
 
