@@ -1319,8 +1319,20 @@ PrefabInstance:
       value: Particle Systemfarmer
       objectReference: {fileID: 0}
     - target: {fileID: 8361785221079690795, guid: 430ce24c5f42f1e479237ec9c449b104, type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361785221079690795, guid: 430ce24c5f42f1e479237ec9c449b104, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -52.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361785221079690795, guid: 430ce24c5f42f1e479237ec9c449b104, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361785221079690795, guid: 430ce24c5f42f1e479237ec9c449b104, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430ce24c5f42f1e479237ec9c449b104, type: 3}
@@ -2853,8 +2865,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 24.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -55.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4967157739887954519, guid: 6d4f0a62412a91e4ab599e8336b310b0, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
