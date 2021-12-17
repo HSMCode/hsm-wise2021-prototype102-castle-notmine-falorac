@@ -9,7 +9,7 @@ public class moveDoor : MonoBehaviour
 {
     public Transform pivotObject;
     public float speed = 5.0f;
-    private float doorRotation = 101.0f;
+    //private float doorRotation = 101.0f;
     public bool isDoorDown;
     public TextMeshProUGUI TimerText;
     private float Timer;
@@ -23,6 +23,8 @@ public class moveDoor : MonoBehaviour
     public GameObject gameWonPanel;
     public GameObject spawner;
     
+    public ParticleSystem farmerParticles;
+    public ParticleSystem thiefParticles;
 
     private AudioSource doorAudioSource;        //create audiosource-variable
    
@@ -95,6 +97,7 @@ public class moveDoor : MonoBehaviour
             damage--;
             //Debug.Log("THIEF!");
             Destroy(other.gameObject);
+            thiefParticles.Emit(5);
         }
         
         if (other.CompareTag("Farmer"))
@@ -104,6 +107,7 @@ public class moveDoor : MonoBehaviour
             points++;
             //Debug.Log("FARMER!");
             Destroy(other.gameObject);
+            farmerParticles.Emit(5);
         }
     }
     void DamageCastle()
