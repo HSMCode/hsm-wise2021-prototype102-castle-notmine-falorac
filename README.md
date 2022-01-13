@@ -5,7 +5,6 @@ Stop thieves from sneaking into the castle!
 ## Summary
   - [Code Structure](#code-structure)
   - [Getting Started](#getting-started)
-  - [Authors](#authors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
@@ -18,16 +17,8 @@ Clone the repository and run the Unity project!
 
 ### Prerequisites
 
-- Unity 2020.3.18f
+- Unity 2020.3.19f
 
-## Authors
-
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
 
 ## License
 
@@ -37,4 +28,6 @@ details
 
 ## Acknowledgments
 
-  - Game concept by Svenja
+  - Game concept by Svenja Döbert
+  - Code by Carola Feierfeil, Anna Moritz, Nelly Granson, Willi Bücking, Svenja Döbert
+

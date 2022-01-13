@@ -13,18 +13,22 @@ public class moveDoor : MonoBehaviour
     public bool isDoorDown;
     public TextMeshProUGUI TimerText;
     private float Timer;
-    public int damage;
     public int points;
-    public TextMeshProUGUI damageText;
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI pointsMadeText;
     public TextMeshProUGUI pointsMadeText2;
     public GameObject gameOverPanel;
     public GameObject gameWonPanel;
     public GameObject spawner;
-    
 
-    private AudioSource doorAudioSource;        //create audiosource-variable
+
+    //Health Bar
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+
+
+    private AudioSource doorAudioSource; //create audiosource-variable
    
     public Animator doorAnimator;
 
@@ -34,10 +38,13 @@ public class moveDoor : MonoBehaviour
         isDoorDown = true;
         doorAnimator.SetBool("IsOpen", true);
         Timer = 30f;
-        damage = 5;
         points = 0;
         gameOverPanel.SetActive(false);
         gameWonPanel.SetActive(false);
+
+        //Health Bar
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
 
         doorAudioSource = GetComponent<AudioSource>();    //assign audio-source of this object to the variable, the clip in the source (atmo) is set to play on awake and loop  
 
@@ -92,8 +99,7 @@ public class moveDoor : MonoBehaviour
     {
         if (other.CompareTag("Thief"))
         {
-            damage--;
-            //Debug.Log("THIEF!");
+            TakeDamage(25);
             Destroy(other.gameObject);
         }
         
@@ -102,20 +108,24 @@ public class moveDoor : MonoBehaviour
             //Timer needs to go up by more than 1 second
             Timer ++;
             points++;
-            //Debug.Log("FARMER!");
             Destroy(other.gameObject);
         }
     }
     void DamageCastle()
     {
-        damageText.text = "Damage: " + damage;
-
-        if (damage <= 0)
+        if (currentHealth <= 0)
         {
             GameOver();
         }
             
     }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
 
     private void GameOver()
     {
@@ -123,6 +133,7 @@ public class moveDoor : MonoBehaviour
         pointsMadeText.text = "You saved " + points + " farmers"; // show points on GameOver Panel
         Destroy(spawner); // stop spwaning people
         StopAtmo();
+
 
     }
 
