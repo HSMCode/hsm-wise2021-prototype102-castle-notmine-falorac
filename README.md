@@ -18,6 +18,7 @@ Clone the repository and run the Unity project!
 ### Prerequisites
 
 - Unity 2020.3.19f
+- Visual Studios 
 
 
 ## License
@@ -30,4 +31,16 @@ details
 
   - Game concept by Svenja Döbert
   - Code by Carola Feierfeil, Anna Moritz, Nelly Granson, Willi Bücking, Svenja Döbert
+
+Images
+
+"Burning City" OT:"The destruction of Sodom and Gomorrah" by Pieter Schoubroeck
+Licence "Public Domain"
+
+"Wealthy City" by Michel Wolgemut, Wilhelm Pleydenwurff 
+Licence "Public Domain"
+
+"Wall Background" OT:"Black Stone Wallpaper HD" by "John Mercado 
+https://cutewallpaper.org/download.php?file=/21/black-stone-wallpaper-hd/Stone-Texture-Wallpaper-37-images.jpg
+Licence "Public Domain"
 
